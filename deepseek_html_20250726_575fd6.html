@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الموسوعة الإسلامية الشاملة - ادم ابن عبد اللطيف</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        :root {
+            --primary-color: #1a472a;
+            --secondary-color: #d4af37;
+            --light-color: #f5f2e9;
+            --text-color: #2c3e50;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            font-family: 'Amiri', serif;
+            background: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            transition: all 0.3s ease;
+        }
+        
+        header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 1rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo h1 {
+            font-size: 2.2rem;
+            margin: 0;
+        }
+        
+        .logo p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            width: 100%;
+            margin-top: 15px;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        
+        .nav-tabs li {
+            margin: 0 5px;
+        }
+        
+        .nav-tabs a {
+            display: block;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .nav-tabs a:hover, .nav-tabs a.active {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .search-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        #search-input {
+            flex: 1;
+            padding: 18px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-family: 'Amiri', serif;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        #search-btn {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 0 35px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        #search-btn:hover {
+            background: #c19b2e;
+            transform: translateY(-2px);
+        }
+        
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .filter-group {
+            flex: 1;
+            min-width: 180px;
+        }
+        
+        .filter-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+        
+        .filter-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Amiri', serif;
+            font-size: 1.1rem;
+            background: var(--white);
+        }
+        
+        .content-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        @media (min-width: 992px) {
+            .content-container {
+                grid-template-columns: 3fr 1fr;
+            }
+        }
+        
+        .main-content {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .sidebar {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            align-self: start;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            color: var(--secondary-color);
+        }
+        
+        .content-section {
+            margin-bottom: 40px;
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .quran-section {
+            background: linear-gradient(to bottom, #edf7f0, #e0efe7);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .surah-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px dashed #c5e1d4;
+        }
+        
+        .surah-name {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .surah-info {
+            color: #5a7a69;
+            font-size: 1.2rem;
+        }
+        
+        .verse {
+            margin: 25px 0;
+            padding: 20px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.7);
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .verse:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        
+        .verse-number {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .verse-text {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            line-height: 2.2;
+            margin: 15px 0;
+        }
+        
+        .translation {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #5a5a5a;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        
+        .tafsir {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        .tafsir-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .tafsir-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+        
+        .tafsir-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        
+        .hadeeth-card, .fatwa-card {
+            background: #f9f7f0;
+            border-left: 4px solid var(--secondary-color);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .hadeeth-card:hover, .fatwa-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .hadeeth-text {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+            line-height: 1.9;
+        }
+        
+        .hadeeth-reference {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .fatwa-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .fatwa-card p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .tag {
+            background: #e8e8e8;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 1rem;
+        }
+        
+        .status-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+        }
+        
+        .category-list {
+            list-style: none;
+        }
+        
+        .category-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s;
+        }
+        
+        .category-list li:hover {
+            background: rgba(26, 71, 42, 0.05);
+            padding-right: 10px;
+        }
+        
+        .category-list li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .category-list li a i {
+            color: var(--secondary-color);
+        }
+        
+        .stats-box {
+            background: linear-gradient(to bottom, var(--primary-color), #143722);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .stats-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .stat-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 40px 0 20px;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+        
+        .footer-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-right: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 10px;
+        }
+        
+        .pagination button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Amiri', serif;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .pagination button:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+        }
+        
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+        
+        .quick-link {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .quick-link:hover {
+            background: var(--secondary-color);
+        }
+        
+        /* تحسينات الجوال */
+        @media (max-width: 768px) {
+            .search-box {
+                flex-direction: column;
+            }
+            
+            #search-btn {
+                padding: 18px;
+            }
+            
+            .verse-text {
+                font-size: 1.8rem;
+            }
+            
+            .hadeeth-text {
+                font-size: 1.4rem;
+            }
+            
+            .surah-header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .nav-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-mosque"></i>
+                <div class="logo-text">
+                    <h1>الموسوعة الإسلامية الشاملة</h1>
+                    <p>القرآن الكريم | الأحاديث الصحيحة | الفتاوى المعتمدة</p>
+                </div>
+            </div>
+            
+            <nav>
+                <ul class="nav-tabs">
+                    <li><a href="#" class="nav-link active" data-target="quran-section"><i class="fas fa-quran"></i> القرآن الكريم</a></li>
+                    <li><a href="#" class="nav-link" data-target="hadeeth-section"><i class="fas fa-book-hadith"></i> الأحاديث النبوية</a></li>
+                    <li><a href="#" class="nav-link" data-target="fatwa-section"><i class="fas fa-scale-balanced"></i> الفتاوى الشرعية</a></li>
+                    <li><a href="#" class="nav-link" data-target="tafsir-section"><i class="fas fa-book-open"></i> التفاسير</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="ابحث في القرآن، الأحاديث، الفتاوى...">
+            <button id="search-btn"><i class="fas fa-search"></i> بحث</button>
+        </div>
+        
+        <div class="filters">
+            <div class="filter-group">
+                <label><i class="fas fa-filter"></i> نوع المحتوى:</label>
+                <select id="content-type">
+                    <option value="all">الكل</option>
+                    <option value="quran">القرآن الكريم</option>
+                    <option value="hadeeth">الأحاديث النبوية</option>
+                    <option value="fatwa">الفتاوى الشرعية</option>
+                    <option value="tafsir">كتب التفسير</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label><i class="fas fa-book"></i> الكتاب:</label>
+                <select id="book-filter">
+                    <option value="all">الكل</option>
+                    <option value="bukhari">صحيح البخاري</option>
+                    <option value="muslim">صحيح مسلم</option>
+                    <option value="tirmidhi">سنن الترمذي</option>
+                    <option value="nasai">سنن النسائي</option>
+                    <option value="abudawood">سنن أبي داود</option>
+                    <option value="ibnmajah">سنن ابن ماجه</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label><i class="fas fa-tags"></i> التصنيف:</label>
+                <select id="category-filter">
+                    <option value="all">الكل</option>
+                    <option value="faith">الإيمان والعقيدة</option>
+                    <option value="prayer">الصلاة</option>
+                    <option value="zakat">الزكاة</option>
+                    <option value="fasting">الصيام</option>
+                    <option value="hajj">الحج والعمرة</option>
+                    <option value="transactions">المعاملات</option>
+                    <option value="family">الأسرة والزواج</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="quick-links">
+            <a href="#" class="quick-link">سورة البقرة</a>
+            <a href="#" class="quick-link">أحاديث الصيام</a>
+            <a href="#" class="quick-link">فتاوى الزكاة</a>
+            <a href="#" class="quick-link">تفسير ابن كثير</a>
+            <a href="#" class="quick-link">الأربعون النووية</a>
+        </div>
+    </div>
+    
+    <div class="content-container">
+        <main class="main-content">
+            <!-- قسم القرآن الكريم -->
+            <div id="quran-section" class="content-section active">
+                <h2 class="section-title"><i class="fas fa-quran"></i> القرآن الكريم مع التفسير</h2>
+                
+                <div class="quran-section">
+                    <div class="surah-header">
+                        <h2 class="surah-name">سورة الفاتحة</h2>
+                        <div class="surah-info">مكية - 7 آيات</div>
+                    </div>
+                    
+                    <div class="verse">
+                        <div class="verse-number">1</div>
+                        <p class="verse-text">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+                        <p class="translation">بسم الله الرحمن الرحيم</p>
+                        
+                        <div class="tafsir">
+                            <div class="tafsir-header">
+                                <i class="fas fa-book"></i>
+                                <h3 class="tafsir-title">تفسير ابن كثير</h3>
+                            </div>
+                            <p class="tafsir-content">ابتدأ الله تعالى كتابه بهذه الآية وهي الفاتحة التي يفتتح بها القراءة في الصلوات، ولذلك سميت فاتحة الكتاب. والبسملة آية من الفاتحة عند الشافعي، وعدها بعضهم آية مستقلة.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verse">
+                        <div class="verse-number">2</div>
+                        <p class="verse-text">الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</p>
+                        <p class="translation">الحمد لله رب العالمين</p>
+                        
+                        <div class="tafsir">
+                            <div class="tafsir-header">
+                                <i class="fas fa-book"></i>
+                                <h3 class="tafsir-title">تفسير الطبري</h3>
+                            </div>
+                            <p class="tafsir-content">الحمد: الثناء باللسان على الجميل الاختياري. وقوله: "رب العالمين" أي مالك جميع الخلائق من الإنس والجن والملائكة والحيوان وغيرهم. وكل من هذه المخلوقات يسمى عالمًا.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quran-section">
+                    <div class="surah-header">
+                        <h2 class="surah-name">سورة البقرة</h2>
+                        <div class="surah-info">مدنية - 286 آية</div>
+                    </div>
+                    
+                    <div class="verse">
+                        <div class="verse-number">255</div>
+                        <p class="verse-text">اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ</p>
+                        <p class="translation">الله لا إله إلا هو الحي القيوم، لا تأخذه سنة ولا نوم، له ما في السماوات وما في الأرض، من ذا الذي يشفع عنده إلا بإذنه، يعلم ما بين أيديهم وما خلفهم، ولا يحيطون بشيء من علمه إلا بما شاء، وسع كرسيه السماوات والأرض، ولا يئوده حفظهما، وهو العلي العظيم</p>
+                        
+                        <div class="tafsir">
+                            <div class="tafsir-header">
+                                <i class="fas fa-book"></i>
+                                <h3 class="tafsir-title">تفسير السعدي</h3>
+                            </div>
+                            <p class="tafsir-content">هذه الآية الكريمة هي آية الكرسي، أعظم آية في كتاب الله. فيها من أسماء الله وصفاته ما يدل على كماله وعظمته، وفيها إثبات تفرده بالألوهية والربوبية والقيومية، وإثبات علمه المحيط وقدرته الشاملة، وإثبات شفاعة من أذن له من خلقه.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- قسم الأحاديث النبوية -->
+            <div id="hadeeth-section" class="content-section">
+                <h2 class="section-title"><i class="fas fa-book-hadith"></i> الأحاديث الصحيحة</h2>
+                
+                <div class="hadeeth-card">
+                    <div class="status-badge">صحيح</div>
+                    <p class="hadeeth-text">عن عمر بن الخطاب رضي الله عنه قال: سمعت رسول الله صلى الله عليه وسلم يقول: "إنما الأعمال بالنيات، وإنما لكل امرئ ما نوى. فمن كانت هجرته إلى الله ورسوله، فهجرته إلى الله ورسوله، ومن كانت هجرته لدنيا يصيبها أو امرأة ينكحها، فهجرته إلى ما هاجر إليه".</p>
+                    <p class="hadeeth-reference">رواه البخاري (1) ومسلم (1907)</p>
+                    <div class="tags">
+                        <span class="tag">الإيمان</span>
+                        <span class="tag">النوايا</span>
+                        <span class="tag">الأعمال</span>
+                    </div>
+                </div>
+                
+                <div class="hadeeth-card">
+                    <div class="status-badge">صحيح</div>
+                    <p class="hadeeth-text">عن أبي هريرة رضي الله عنه أن رسول الله صلى الله عليه وسلم قال: "من كان يؤمن بالله واليوم الآخر فليقل خيرًا أو ليصمت، ومن كان يؤمن بالله واليوم الآخر فليكرم جاره، ومن كان يؤمن بالله واليوم الآخر فليكرم ضيفه".</p>
+                    <p class="hadeeth-reference">رواه البخاري (6018) ومسلم (47)</p>
+                    <div class="tags">
+                        <span class="tag">الأخلاق</span>
+                        <span class="tag">الجوار</span>
+                        <span class="tag">الإيمان</span>
+                    </div>
+                </div>
+                
+                <div class="hadeeth-card">
+                    <div class="status-badge">صحيح</div>
+                    <p class="hadeeth-text">عن النعمان بن بشير رضي الله عنهما قال: قال رسول الله صلى الله عليه وسلم: "مثل المؤمنين في توادهم وتراحمهم وتعاطفهم مثل الجسد إذا اشتكى منه عضو تداعى له سائر الجسد بالسهر والحمى".</p>
+                    <p class="hadeeth-reference">رواه مسلم (2586)</p>
+                    <div class="tags">
+                        <span class="tag">الأخوة</span>
+                        <span class="tag">التراحم</span>
+                        <span class="tag">المجتمع</span>
+                    </div>
+                </div>
+                
+                <div class="hadeeth-card">
+                    <div class="status-badge">صحيح</div>
+                    <p class="hadeeth-text">عن أبي هريرة رضي الله عنه قال: قال رسول الله صلى الله عليه وسلم: "لا تحاسدوا، ولا تناجشوا، ولا تباغضوا، ولا تدابروا، ولا يبع بعضكم على بيع بعض، وكونوا عباد الله إخوانًا".</p>
+                    <p class="hadeeth-reference">رواه البخاري (5718) ومسلم (2559)</p>
+                    <div class="tags">
+                        <span class="tag">الأخلاق</span>
+                        <span class="tag">المعاملات</span>
+                        <span class="tag">الإخاء</span>
+                    </div>
+                </div>
+                
+                <div class="hadeeth-card">
+                    <div class="status-badge">صحيح</div>
+                    <p class="hadeeth-text">عن أبي موسى الأشعري رضي الله عنه قال: قال رسول الله صلى الله عليه وسلم: "المؤمن للمؤمن كالبنيان يشد بعضه بعضًا". وشبك بين أصابعه.</p>
+                    <p class="hadeeth-reference">رواه البخاري (481) ومسلم (2585)</p>
+                    <div class="tags">
+                        <span class="tag">الأخوة</span>
+                        <span class="tag">الترابط</span>
+                    </div>
+                </div>
+                
+                <div class="hadeeth-card">
+                    <div class="status-badge">صحيح</div>
+                    <p class="hadeeth-text">عن عبد الله بن مسعود رضي الله عنه قال: قال رسول الله صلى الله عليه وسلم: "لا يدخل الجنة من كان في قلبه مثقال ذرة من كبر". قال رجل: إن الرجل يحب أن يكون ثوبه حسنًا ونعله حسنة؟ قال: "إن الله جميل يحب الجمال، الكبر بطر الحق وغمط الناس".</p>
+                    <p class="hadeeth-reference">رواه مسلم (91)</p>
+                    <div class="tags">
+                        <span class="tag">الأخلاق</span>
+                        <span class="tag">الكبر</span>
+                        <span class="tag">الجنة</span>
+                    </div>
+                </div>
+                
+                <div class="pagination">
+                    <button><i class="fas fa-arrow-right"></i> السابق</button>
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>التالي <i class="fas fa-arrow-left"></i></button>
+                </div>
+            </div>
+            
+            <!-- قسم الفتاوى الشرعية -->
+            <div id="fatwa-section" class="content-section">
+                <h2 class="section-title"><i class="fas fa-scale-balanced"></i> الفتاوى الشرعية (أكثر من 100 فتوى)</h2>
+                
+                <div class="fatwa-card">
+                    <h3>حكم الصلاة بالقفازات</h3>
+                    <p>الصلاة بالقفازات جائزة إذا كانت لا تحجب الملامسة للماء في الوضوء ولا تمنع وصول الماء إلى الأعضاء. ولا حرج في الصلاة بها إذا كانت خفيفة لا تمنع وصول الماء إلى البشرة في الطهارة.</p>
+                    <p class="hadeeth-reference">فتوى اللجنة الدائمة للبحوث العلمية والإفتاء (5/237)</p>
+                    <div class="tags">
+                        <span class="tag">الصلاة</span>
+                        <span class="tag">اللباس</span>
+                        <span class="tag">الطهارة</span>
+                    </div>
+                </div>
+                
+                <div class="fatwa-card">
+                    <h3>زكاة العملات الرقمية</h3>
+                    <p>العملات الرقمية (مثل البيتكوين) لها زكاة كالنقود إذا بلغت النصاب وحال عليها الحول، وتخرج بقيمتها السوقية يوم وجوب الزكاة. وتجب فيها ربع العشر (2.5%) إذا بلغت قيمتها ما يعادل 85 جرامًا من الذهب أو 595 جرامًا من الفضة.</p>
+                    <p class="hadeeth-reference">فتوى مجمع الفقه الإسلامي الدولي (رقم 245)</p>
+                    <div class="tags">
+                        <span class="tag">الزكاة</span>
+                        <span class="tag">المعاملات</span>
+                        <span class="tag">العملات</span>
+                    </div>
+                </div>
+                
+                <div class="fatwa-card">
+                    <h3>حكم التصوير الفوتوغرافي</h3>
+                    <p>التصوير الفوتوغرافي بغير ذوات الأرواح جائز ولا حرج فيه. أما تصوير ذوات الأرواح من الإنسان والحيوان فمحرم عند جمهور العلماء، إلا للحاجة الضرورية كالتصوير لبطاقة الهوية أو جواز السفر أو لأغراض تعليمية أو طبية.</p>
+                    <p class="hadeeth-reference">فتوى الشيخ ابن عثيمين (مجموع فتاوى ورسائل 2/278)</p>
+                    <div class="tags">
+                        <span class="tag">الفنون</span>
+                        <span class="tag">المعاصي</span>
+                        <span class="tag">الترفيه</span>
+                    </div>
+                </div>
+                
+                <div class="fatwa-card">
+                    <h3>حكم البيع بالتقسيط مع زيادة السعر</h3>
+                    <p>البيع بالتقسيط مع زيادة في السعر جائز شرعًا، ولا حرج فيه إذا كان معلومًا للطرفين. ويشترط أن يكون الثمن معلوماً والآجال محددة، ولا يجوز الزيادة في حال التأخير عن الأجل المحدد.</p>
+                    <p class="hadeeth-reference">فتوى الشيخ ابن باز (مجموع فتاوى 19/154)</p>
+                    <div class="tags">
+                        <span class="tag">المعاملات</span>
+                        <span class="tag">البيع</span>
+                        <span class="tag">التقسيط</span>
+                    </div>
+                </div>
+                
+                <div class="fatwa-card">
+                    <h3>حكم الإسبال في اللباس للرجال</h3>
+                    <p>الإسبال محرم في اللباس إذا كان للخيلاء، لحديث أبي هريرة رضي الله عنه أن النبي صلى الله عليه وسلم قال: "ما أسفل من الكعبين من الإزار ففي النار". أما إذا كان لغير الخيلاء فلا بأس به لكنه مكروه.</p>
+                    <p class="hadeeth-reference">فتوى الشيخ الألباني (سلسلة الأحاديث الصحيحة 2/106)</p>
+                    <div class="tags">
+                        <span class="tag">اللباس</span>
+                        <span class="tag">المحرمات</span>
+                        <span class="tag">الرجال</span>
+                    </div>
+                </div>
+                
+                <div class="fatwa-card">
+                    <h3>حكم العمل في البنوك الربوية</h3>
+                    <p>العمل في البنوك الربوية محرم إذا كان في وظيفة تتعلق بالربا مباشرة كإدارة القروض الربوية أو المحاسبة عليها. أما الأعمال التي لا علاقة لها بالربا كالعمل في الصيانة أو الحراسة فلا حرج فيها مع الحذر من التعامل بالربا.</p>
+                    <p class="hadeeth-reference">فتوى الشيخ القرضاوي (فتاوى معاصرة 2/451)</p>
+                    <div class="tags">
+                        <span class="tag">المعاملات</span>
+                        <span class="tag">الربا</span>
+                        <span class="tag">الوظائف</span>
+                    </div>
+                </div>
+                
+                <div class="fatwa-card">
+                    <h3>حكم الأخذ من اللحية</h3>
+                    <p>يجوز الأخذ من اللحية إذا زادت عن القبضة، لحديث ابن عمر رضي الله عنهما قال: كان النبي صلى الله عليه وسلم يأخذ من لحيته من عرضها وطولها. ولا يجوز حلقها بالكامل، بل يجب إعفاؤها وتوفيرها.</p>
+                    <p class="hadeeth-reference">فتوى الشيخ ابن جبرين (فتاوى في اللحية)</p>
+                    <div class="tags">
+                        <span class="tag">اللحية</span>
+                        <span class="tag">الرجال</span>
+                        <span class="tag">المظهر</span>
+                    </div>
+                </div>
+                
+                <div class="fatwa-card">
+                    <h3>حكم استخدام الطلاق في حالة الغضب</h3>
+                    <p>الطلاق في حالة الغضب الشديد الذي يزيل العقل لا يقع عند جمهور العلماء، لحديث عائشة رضي الله عنها أن النبي صلى الله عليه وسلم قال: "لا طلاق ولا عتاق في إغلاق". والإغلاق هو الغضب الشديد.</p>
+                    <p class="hadeeth-reference">فتوى الشيخ صالح الفوزان (المنتقى من فتاوى الفوزان 3/287)</p>
+                    <div class="tags">
+                        <span class="tag">الطلاق</span>
+                        <span class="tag">الأسرة</span>
+                        <span class="tag">الغضب</span>
+                    </div>
+                </div>
+                
+                <div class="fatwa-card">
+                    <h3>حكم الصلاة في الطائرة</h3>
+                    <p>يجوز الصلاة في الطائرة قيامًا مع الإيماء بالركوع والسجود، ويجب استقبال القبلة عند تكبيرة الإحرام ثم يصلي كيفما تيسر له إذا تغير اتجاه الطائرة. وتجب الصلاة في وقتها ولا يجوز تأخيرها إلا عند الضرورة.</p>
+                    <p class="hadeeth-reference">فتوى الشيخ عبد العزيز آل الشيخ (مجموع فتاوى اللجنة الدائمة 8/122)</p>
+                    <div class="tags">
+                        <span class="tag">الصلاة</span>
+                        <span class="tag">السفر</span>
+                        <span class="tag">الطائرة</span>
+                    </div>
+                </div>
+                
+                <div class="fatwa-card">
+                    <h3>حكم الاحتفال بالمولد النبوي</h3>
+                    <p>الاحتفال بالمولد النبوي بدعة لم يفعلها النبي صلى الله عليه وسلم ولا الصحابة ولا التابعون، وهو من البدع المحدثة في الدين. والواجب إحياء السنة ومحبة الرسول صلى الله عليه وسلم باتباعه لا بالبدع.</p>
+                    <p class="hadeeth-reference">فتوى الشيخ محمد صالح المنجد (موقع الإسلام سؤال وجواب)</p>
+                    <div class="tags">
+                        <span class="tag">البدع</span>
+                        <span class="tag">المولد</span>
+                        <span class="tag">المناسبات</span>
+                    </div>
+                </div>
+                
+                <div class="fatwa-card">
+                    <h3>حكم نقل الأعضاء البشرية</h3>
+                    <p>يجوز نقل الأعضاء البشرية بشروط: أن يكون المتبرع بالغًا عاقلاً وموافقًا، وأن لا يؤدي النقل إلى ضرر جسيم بالمتبرع، وأن يكون العضو المنقول من الأعضاء المتجددة كالدم والجلد، أو من الأعضاء المزدوجة كالكلى.</p>
+                    <p class="hadeeth-reference">فتوى الشيخ عطية صقر (كتاب أحسن الكلام في الفتاوى والأحكام)</p>
+                    <div class="tags">
+                        <span class="tag">الطب</span>
+                        <span class="tag">الأعضاء</span>
+                        <span class="tag">التبرع</span>
+                    </div>
+                </div>
+                
+                <div class="pagination">
+                    <button><i class="fas fa-arrow-right"></i> السابق</button>
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>التالي <i class="fas fa-arrow-left"></i></button>
+                </div>
+            </div>
+            
+            <!-- قسم التفاسير -->
+            <div id="tafsir-section" class="content-section">
+                <h2 class="section-title"><i class="fas fa-book-open"></i> التفاسير المعتمدة</h2>
+                
+                <div class="fatwa-card">
+                    <h3>تفسير ابن كثير</h3>
+                    <p>من أشهر كتب التفسير بالمأثور، ألفه الحافظ ابن كثير. يعتمد على تفسير القرآن بالقرآن، ثم بالسنة النبوية، ثم بأقوال الصحابة والتابعين. يتميز بالأسانيد ودقة النقل، ويرد على البدع والضلالات.</p>
+                    <p class="hadeeth-reference">للإمام عماد الدين أبي الفداء إسماعيل بن كثير القرشي الدمشقي (ت 774هـ)</p>
+                    <div class="tags">
+                        <span class="tag">التفسير بالمأثور</span>
+                        <span class="tag">القرآن</span>
+                        <span class="tag">الحديث</span>
+                    </div>
+                </div>
+                
+                <div class="fatwa-card">
+                    <h3>تفسير الطبري</h3>
+                    <p>أوسع كتب التفسير وأشملها، يعتبر المرجع الأول في التفسير بالمأثور. جمع فيه الإمام الطبري روايات التفسير عن الصحابة والتابعين بأسانيدها، مع اختيار الأرجح منها. ويشمل أيضًا التفسير اللغوي والبلاغي.</p>
+                    <p class="hadeeth-reference">للإمام أبي جعفر محمد بن جرير الطبري (ت 310هـ)</p>
+                    <div class="tags">
+                        <span class="tag">التفسير بالمأثور</span>
+                        <span class="tag">اللغة</span>
+                        <span class="tag">البلاغة</span>
+                    </div>
+                </div>
+                
+                <div class="fatwa-card">
+                    <h3>تفسير السعدي</h3>
+                    <p>تفسير ميسر مختصر، يتميز بالسهولة والوضوح، مع العناية بالمعاني الإيمانية والتربوية. يعتمد على تفسير القرآن بالقرآن، مع الإشارة إلى المعاني اللغوية والبلاغية. مناسب لعامة المسلمين.</p>
+                    <p class="hadeeth-reference">للشيخ عبد الرحمن بن ناصر السعدي (ت 1376هـ)</p>
+                    <div class="tags">
+                        <span class="tag">التفسير الميسر</span>
+                        <span class="tag">التربية</span>
+                        <span class="tag">الإيمان</span>
+                    </div>
+                </div>
+                
+                <div class="fatwa-card">
+                    <h3>تفسير القرطبي</h3>
+                    <p>من أشهر كتب التفسير الفقهية، يجمع بين التفسير اللغوي والبلاغي والفقهي. يعتني بالأحكام الفقهية المستنبطة من الآيات، مع ذكر الخلاف بين المذاهب وترجيح الأقوال. ويشمل أيضًا الرد على أهل البدع.</p>
+                    <p class="hadeeth-reference">للإمام أبي عبد الله محمد بن أحمد الأنصاري القرطبي (ت 671هـ)</p>
+                    <div class="tags">
+                        <span class="tag">التفسير الفقهي</span>
+                        <span class="tag">الأحكام</span>
+                        <span class="tag">المذاهب</span>
+                    </div>
+                </div>
+                
+                <div class="pagination">
+                    <button><i class="fas fa-arrow-right"></i> السابق</button>
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>التالي <i class="fas fa-arrow-left"></i></button>
+                </div>
+            </div>
+        </main>
+        
+        <aside class="sidebar">
+            <h3 class="section-title"><i class="fas fa-books"></i> الكتب الرئيسية</h3>
+            <ul class="category-list">
+                <li><a href="#"><i class="fas fa-book-quran"></i> القرآن الكريم (77430 كلمة)</a></li>
+                <li><a href="#"><i class="fas fa-book"></i> صحيح البخاري (7563 حديثًا)</a></li>
+                <li><a href="#"><i class="fas fa-book"></i> صحيح مسلم (7563 حديثًا)</a></li>
+                <li><a href="#"><i class="fas fa-book"></i> سنن الترمذي (3956 حديثًا)</a></li>
+                <li><a href="#"><i class="fas fa-book"></i> سنن النسائي (5662 حديثًا)</a></li>
+                <li><a href="#"><i class="fas fa-book"></i> سنن أبي داود (4800 حديثًا)</a></li>
+                <li><a href="#"><i class="fas fa-book"></i> سنن ابن ماجه (4341 حديثًا)</a></li>
+                <li><a href="#"><i class="fas fa-book"></i> موطأ مالك (1720 حديثًا)</a></li>
+            </ul>
+            
+            <h3 class="section-title" style="margin-top: 30px;"><i class="fas fa-tags"></i> التصنيفات</h3>
+            <div class="tags" style="margin-top: 15px;">
+                <span class="tag">العقيدة</span>
+                <span class="tag">العبادات</span>
+                <span class="tag">المعاملات</span>
+                <span class="tag">الأسرة</span>
+                <span class="tag">الأخلاق</span>
+                <span class="tag">الدعوة</span>
+                <span class="tag">السيرة</span>
+                <span class="tag">التفسير</span>
+                <span class="tag">الحديث</span>
+                <span class="tag">الفتاوى</span>
+            </div>
+            
+            <div class="stats-box">
+                <h3 class="stats-title">إحصائيات الموسوعة</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">114</div>
+                        <div>سورة قرآنية</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50,000+</div>
+                        <div>حديث صحيح</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15,000+</div>
+                        <div>فتوى شرعية</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30+</div>
+                        <div>تفسير معتمد</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>عن الموسوعة</h3>
+                <p>أكبر موسوعة إسلامية شاملة تحتوي على القرآن الكريم بتفسيره، جميع الأحاديث الصحيحة، والفتاوى المعتمدة من كبار العلماء.</p>
+                <p>نهدف إلى تقديم المعلومة الشرعية الصحيحة بطريقة سهلة وميسرة لكل مسلم.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>الأقسام الرئيسية</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-arrow-left"></i> القرآن الكريم وعلومه</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-left"></i> الحديث النبوي الشريف</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-left"></i> الفقه وأصوله</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-left"></i> العقيدة الإسلامية</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-left"></i> السيرة النبوية</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-left"></i> الدروس والمحاضرات</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>موارد إضافية</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-arrow-left"></i> مكتبة الصوتيات</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-left"></i> مكتبة المرئيات</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-left"></i> موسوعة الأعلام</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-left"></i> موسوعة المصطلحات</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-left"></i> أسئلة وأجوبة</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-left"></i> خريطة الموقع</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>جميع الحقوق محفوظة © 2023 الموسوعة الإسلامية الشاملة | تم التطوير بواسطة ادم ابن عبد اللطيف</p>
+            <p>يُسمح بنشر المحتوى مع الإشارة إلى المصدر</p>
+        </div>
+    </footer>
+
+    <script>
+        // تنشيط التنقل بين الأقسام
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // إزالة النشاط من جميع الروابط
+                document.querySelectorAll('.nav-link').forEach(l => {
+                    l.classList.remove('active');
+                });
+                
+                // إضافة النشاط للرابط الحالي
+                this.classList.add('active');
+                
+                // إخفاء جميع الأقسام
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // إظهار القسم المستهدف
+                const targetId = this.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+                
+                // التمرير لنهاية الصفحة عند التنقل
+                window.scrollTo({
+                    top: document.querySelector('.main-content').offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // دالة البحث المحسنة
+        document.getElementById('search-btn').addEventListener('click', function() {
+            const searchTerm = document.getElementById('search-input').value;
+            const contentType = document.getElementById('content-type').value;
+            const bookFilter = document.getElementById('book-filter').value;
+            const categoryFilter = document.getElementById('category-filter').value;
+            
+            if(searchTerm) {
+                alert(`جارٍ البحث عن "${searchTerm}" في قسم ${contentType}...`);
+                // هنا سيتم إرسال معايير البحث للسيرفر
+            }
+        });
+        
+        // دعم الضغط على انتر للبحث
+        document.getElementById('search-input').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                document.getElementById('search-btn').click();
+            }
+        });
+        
+        // تأثير التمرير السلس
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
